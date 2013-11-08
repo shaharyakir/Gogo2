@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        android:id="@+id/layout_show_activities_activity"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#CCCCCC"
+        style="@android:style/Theme.Holo.Light.NoActionBar"
+        >
+
+    <LinearLayout
+            android:id="@+id/layout_my_details"
+            android:layout_width="fill_parent"
+            android:layout_height="80dp"
+            android:background="@drawable/button_my_profile"
+            style="@style/SearchActivitiesSection"
+            android:orientation="vertical">
+
+        <LinearLayout
+                android:id="@+id/layout_my_details_top_section"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="horizontal">
+
+            <FrameLayout style="@style/IconFrame"
+                    >
+
+                <ImageView
+                        android:src="@drawable/ic_me"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        />
+            </FrameLayout>
+
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+
+                <TextView
+                        android:text="Profile:"
+                        style="@style/TextView.Label"/>
+
+                <TextView
+                        android:text="With My Wife"
+                        style="@style/TextView.Value"
+                        />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:id="@+id/layout_my_details_bottom_section"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                >
+
+            <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="48dp"
+                    android:gravity="center_vertical"
+                    android:text="Choose a country"
+                    android:background="#FFFFFF"
+                    android:textSize="16sp"
+                    android:clickable="true"
+                    android:visibility="gone"
+                    />
+        </LinearLayout>
+
+        <View
+                android:tag="seperator"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#999999"
+                android:visibility="gone"
+                />
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/layout_location"
+            android:layout_width="fill_parent"
+            android:layout_height="80dp"
+            android:background="@drawable/button_location"
+            style="@style/SearchActivitiesSection"
+            android:orientation="vertical">
+
+        <LinearLayout
+                android:id="@+id/layout_location_top_section"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="horizontal">
+
+            <FrameLayout
+                    android:id="@+id/layout_location_top_section_icon_frame"
+                    style="@style/IconFrame"
+                    >
+
+                <ImageView
+                        android:src="@drawable/ic_world"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        />
+
+                <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:background="#666666"
+                        />
+            </FrameLayout>
+
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+
+                <TextView
+                        android:text="Where:"
+                        style="@style/TextView.Label"/>
+
+                <TextView
+                        android:text="Nepal"
+                        style="@style/TextView.Value"
+                        />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:id="@+id/layout_location_bottom_section"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                >
+
+            <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="48dp"
+                    android:gravity="center_vertical"
+                    android:text="Choose a country"
+                    android:background="#FFFFFF"
+                    android:textSize="16sp"
+                    android:clickable="true"
+                    android:visibility="gone"
+                    />
+        </LinearLayout>
+
+        <View
+                android:tag="seperator"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#999999"
+                android:visibility="gone"
+                />
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/layout_date"
+            android:layout_width="fill_parent"
+            android:layout_height="80dp"
+            android:background="@drawable/button_date"
+            style="@style/SearchActivitiesSection"
+            android:orientation="vertical">
+
+        <LinearLayout
+                android:id="@+id/layout_date_top_section"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="horizontal">
+
+            <FrameLayout style="@style/IconFrame"
+                    >
+
+                <ImageView
+                        android:src="@drawable/ic_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="world_icon"
+                        android:layout_gravity="center"
+                        />
+
+                <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:background="#666666"
+                        />
+            </FrameLayout>
+
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+
+                <TextView
+                        android:text="When:"
+                        style="@style/TextView.Label"
+                        />
+
+                <TextView
+                        android:text="This Week"
+                        style="@style/TextView.Value"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+                android:id="@+id/layout_date_bottom_section"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:visibility="gone"
+                android:layout_width="fill_parent"
+                android:background="#CCCCCC"
+                >
+
+            <TextView
+                    android:layout_width="98dp"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:text="This Week"
+                    android:background="#333333"
+                    android:padding="8dp"
+                    android:layout_margin="3dp"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    />
+
+            <TextView
+                    android:layout_width="98dp"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:text="This Month"
+                    android:background="#333333"
+                    android:padding="8dp"
+                    android:layout_margin="3dp"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    />
+
+            <TextView
+                    android:layout_width="98dp"
+                    android:textAlignment="center"
+                    android:layout_height="wrap_content"
+                    android:text="Specify"
+                    android:background="#333333"
+                    android:padding="8dp"
+                    android:layout_margin="3dp"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:gravity="center"
+                    />
+
+            >
+        </LinearLayout>
+
+        <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#999999"
+                android:visibility="gone"
+                />
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/layout_activity_types"
+            android:layout_width="fill_parent"
+            android:layout_height="80dp"
+            android:background="@drawable/button_activity_types"
+            style="@style/SearchActivitiesSection"
+            android:orientation="vertical">
+
+        <LinearLayout
+                android:id="@+id/layout_activity_types_top_section"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="horizontal">
+
+            <FrameLayout style="@style/IconFrame"
+                    >
+
+                <ImageView
+                        android:src="@drawable/ic_activities"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="world_icon"
+                        android:layout_gravity="center"
+                        />
+
+                <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:background="#666666"
+                        />
+            </FrameLayout>
+
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+
+                <TextView
+                        android:text="What:"
+                        style="@style/TextView.Label"/>
+
+                <TextView
+                        android:text="Rafting, Trekking, Paragli..."
+                        style="@style/TextView.Value"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#aaaaaa"
+                android:visibility="gone"
+                />
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/layout_activity_people"
+            android:layout_width="fill_parent"
+            android:layout_height="80dp"
+            android:background="@drawable/button_people"
+            style="@style/SearchActivitiesSection"
+            android:orientation="vertical">
+
+        <LinearLayout
+                android:id="@+id/layout_activity_people_top_section"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="horizontal">
+
+            <FrameLayout style="@style/IconFrame"
+                    >
+
+                <ImageView
+                        android:src="@drawable/ic_people"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="world_icon"
+                        android:layout_gravity="center"
+                        />
+
+                <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:background="#666666"
+                        />
+            </FrameLayout>
+
+            <LinearLayout android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center">
+            <TextView
+                    android:text="Who:"
+                    style="@style/TextView.Label"/>
+
+            <TextView
+                    android:text="24+, Hebrew, Without C..."
+                    style="@style/TextView.Value"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <!--    <LinearLayout android:id="@+id/layout_activity_result_list"
+
+                      android:background="#DDDDDD"
+                      android:layout_width="fill_parent"
+                      android:layout_height="fill_parent">
+
+            <ListView android:id="@+id/ListViewResults"
+                      android:layout_width="fill_parent"
+                      android:layout_height="wrap_content"
+                      android:dividerHeight="20dp"
+                      android:background="#EEEEEE"
+                    />
+
+        </LinearLayout>-->
+    <View
+            android:layout_height="1dp"
+            android:layout_width="fill_parent"
+            android:background="#BBBBBB"
+            />
+
+    <LinearLayout
+            android:id="@+id/layout_button_area"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#DDDDDD"
+            android:gravity="center"
+            android:orientation="horizontal"
+            >
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:src="@drawable/ic_add_activity"
+                android:layout_gravity="center"
+                />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="Add Activity"
+
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_marginLeft="8dp"
+
+                />
+
+
+    </LinearLayout>
+
+</LinearLayout>
+
