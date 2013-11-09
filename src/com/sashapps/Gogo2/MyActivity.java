@@ -19,19 +19,22 @@ public class MyActivity extends Activity {
     ArrayList<View> sections;
     final int EXPANDED_SIZE_DPS=80;
     final int SMALL_SIZE_DPS=48;
+    final String SEARCH_SECTION_STRING = "search_section";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
+
         /* Add all search parameter sections to array in order to handle visibility when clicked */
-        sections = new ArrayList<View>();
-        sections.add(findViewById(R.id.layout_my_details));
+        sections = getViewsByTag(((ViewGroup)findViewById(R.id.layout_main_activity)),SEARCH_SECTION_STRING);
+
+        /*sections.add(findViewById(R.id.layout_my_details));
         sections.add(findViewById(R.id.layout_location));
         sections.add(findViewById(R.id.layout_date));
         sections.add(findViewById(R.id.layout_activity_types));
-        sections.add(findViewById(R.id.layout_activity_people));
+        sections.add(findViewById(R.id.layout_activity_people));*/
 
         for (View v : sections){
             v.setOnClickListener(setSectionVisibility);
@@ -61,25 +64,45 @@ public class MyActivity extends Activity {
         public void onClick(View view) {
 
             /* Decide whether the section needs to be collapsed or expanded */
-            int a = view.getLayoutParams().height == convertDpsToPixels(EXPANDED_SIZE_DPS) ? convertDpsToPixels(SMALL_SIZE_DPS) : convertDpsToPixels(EXPANDED_SIZE_DPS);
-            view.getLayoutParams().height=a;
+            int newHeight = view.getLayoutParams().height ==
+                            dpsToPixels(EXPANDED_SIZE_DPS) ? dpsToPixels(SMALL_SIZE_DPS) : dpsToPixels(EXPANDED_SIZE_DPS);
+            view.getLayoutParams().height=newHeight;
 
             /* Vanish all other sections */
             for (View v : sections){
                 if (! v.equals(view)){
-                    if (v.getVisibility()==View.GONE){
-                        v.setVisibility(View.VISIBLE);
-                    }
-                    else{
-                        v.setVisibility(View.GONE);
-                    }
+                    int newVisibilty = v.getVisibility() == View.GONE ? View.VISIBLE : View.GONE;
+                    v.setVisibility(newVisibilty);
                 }
             }
+
+
         }
     };
 
-    public int convertDpsToPixels(int pixels){
+    /* =====
+       Utils
+       ===== */
+    public int dpsToPixels(int pixels){
         final float scale = getBaseContext().getResources().getDisplayMetrics().density;
         return (int) (pixels * scale + 0.5f);
+    }
+
+    private static ArrayList<View> getViewsByTag(ViewGroup root, String tag){
+        ArrayList<View> views = new ArrayList<View>();
+        final int childCount = root.getChildCount();
+        for (int i = 0; i < childCount; i++) {
+            final View child = root.getChildAt(i);
+            if (child instanceof ViewGroup) {
+                views.addAll(getViewsByTag((ViewGroup) child, tag));
+            }
+
+            final Object tagObj = child.getTag();
+            if (tagObj != null && tagObj.equals(tag)) {
+                views.add(child);
+            }
+
+        }
+        return views;
     }
 }
